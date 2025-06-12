@@ -48,9 +48,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    
     
     steps:
       - name: Download artifact from build job
@@ -68,4 +66,4 @@ jobs:
         with:
           app-name: 'sidecar-code-test-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9B02994BB42344D2B9FF0BF002F90EA8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3732ECC676D9493B989C50D229B71DC6 }}
